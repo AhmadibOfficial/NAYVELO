@@ -13,7 +13,7 @@
   {
     "id": "NAY-002",
     "title": "Accessible subscriber onboarding simulation",
-    "status": "planned",
+    "status": "done",
     "priority": 1,
     "acceptance": [
       "Add a local-only multi-step onboarding simulation with no personal identity data",

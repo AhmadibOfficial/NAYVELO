@@ -1,5 +1,10 @@
-# NAY-002 — Accessible subscriber onboarding simulation
+# NAY-003 — Subscription catalog and honest plan explanations
 
 Status: planned
 
-See `engineering/tasks.json` for acceptance criteria. The agent must not collect identity information or perform real telecom provisioning. Build only a simulated user journey, add negative tests, run all gates and prepare a feature-branch draft PR.
+Acceptance criteria:
+- Add plan comparison and filter UX in web and Flutter
+- Mark every plan price unconfirmed and unavailable for purchase
+- Unit tests for plan validation and no-payment guarantee
+
+Read AGENTS.md and engineering/RELEASE_GATES.md. Maintain SIMULATION_ONLY.
