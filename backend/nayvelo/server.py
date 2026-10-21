@@ -15,10 +15,11 @@ STATIC_FILES = {
     '/': ('index.html', 'text/html; charset=utf-8'),
     '/index.html': ('index.html', 'text/html; charset=utf-8'),
     '/styles.css': ('styles.css', 'text/css; charset=utf-8'),
+    '/onboarding.js': ('onboarding.js', 'application/javascript; charset=utf-8'),
     '/app.js': ('app.js', 'application/javascript; charset=utf-8'),
 }
 SIMULATION_ONLY = True
-BLOCKED_PREFIXES = ('/api/v1/activate', '/api/v1/esim', '/api/v1/payments', '/api/v1/register', '/api/v1/kyc', '/api/v1/provision', '/api/v1/subscribe', '/api/v1/voice', '/api/v1/sms')
+BLOCKED_PREFIXES = ('/api/v1/subscribers', '/api/v1/activate', '/api/v1/esim', '/api/v1/payments', '/api/v1/register', '/api/v1/kyc', '/api/v1/provision', '/api/v1/subscribe', '/api/v1/voice', '/api/v1/sms')
 
 
 class Handler(BaseHTTPRequestHandler):
