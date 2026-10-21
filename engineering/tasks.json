@@ -1,0 +1,90 @@
+[
+  {
+    "id": "NAY-001",
+    "title": "Project foundation and simulated customer experience",
+    "status": "done",
+    "priority": 0,
+    "acceptance": [
+      "Initial mock API and responsive web experience",
+      "Flutter app source and tests",
+      "CI and telecom safety gates"
+    ]
+  },
+  {
+    "id": "NAY-002",
+    "title": "Accessible subscriber onboarding simulation",
+    "status": "planned",
+    "priority": 1,
+    "acceptance": [
+      "Add a local-only multi-step onboarding simulation with no personal identity data",
+      "Clear simulator disclaimers and accessible web interactions",
+      "Negative tests proving no real registration or telecom request can occur"
+    ]
+  },
+  {
+    "id": "NAY-003",
+    "title": "Subscription catalog and honest plan explanations",
+    "status": "planned",
+    "priority": 2,
+    "acceptance": [
+      "Add plan comparison and filter UX in web and Flutter",
+      "Mark every plan price unconfirmed and unavailable for purchase",
+      "Unit tests for plan validation and no-payment guarantee"
+    ]
+  },
+  {
+    "id": "NAY-004",
+    "title": "eSIM readiness education",
+    "status": "planned",
+    "priority": 3,
+    "acceptance": [
+      "Add educational device eSIM readiness wizard without unsupported compatibility claims",
+      "Accessible keyboard interaction and explanatory statuses",
+      "Never request device identifiers, NIN or real QR codes"
+    ]
+  },
+  {
+    "id": "NAY-005",
+    "title": "Subscriber account simulation and privacy-first data model",
+    "status": "planned",
+    "priority": 4,
+    "acceptance": [
+      "Design a safe mock account state without real personal data",
+      "Add threat model for registration and account takeover risks",
+      "Maintain 403 responses for regulated endpoints"
+    ]
+  },
+  {
+    "id": "NAY-006",
+    "title": "Mock billing and usage measurement sandbox",
+    "status": "planned",
+    "priority": 5,
+    "acceptance": [
+      "Implement entirely synthetic usage fixtures and projections",
+      "No payment capture or real carrier usage integration",
+      "Negative tests for forbidden transaction routes"
+    ]
+  },
+  {
+    "id": "NAY-007",
+    "title": "Administrative dashboard demonstration",
+    "status": "planned",
+    "priority": 6,
+    "acceptance": [
+      "Add synthetic plan and service analytics",
+      "Role boundaries and safe admin mock interactions",
+      "No access to production provisioning or credentials"
+    ]
+  },
+  {
+    "id": "NAY-008",
+    "title": "Carrier adapter contract and certification readiness",
+    "status": "planned",
+    "priority": 7,
+    "acceptance": [
+      "Interface-only adapter definitions with mock implementation",
+      "Document licensing/partner prerequisites for production",
+      "Negative tests ensuring no outbound carrier API requests"
+    ]
+  }
+]

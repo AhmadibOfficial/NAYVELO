@@ -1,0 +1,85 @@
+"""Local development server ONLY: never a production telecommunications service."""
+from __future__ import annotations
+
+import json
+from http import HTTPStatus
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+from urllib.parse import urlsplit
+
+from .catalog import get_plans
+
+ROOT = Path(__file__).resolve().parents[2]
+WEB = ROOT / 'web'
+STATIC_FILES = {
+    '/': ('index.html', 'text/html; charset=utf-8'),
+    '/index.html': ('index.html', 'text/html; charset=utf-8'),
+    '/styles.css': ('styles.css', 'text/css; charset=utf-8'),
+    '/app.js': ('app.js', 'application/javascript; charset=utf-8'),
+}
+SIMULATION_ONLY = True
+BLOCKED_PREFIXES = ('/api/v1/activate', '/api/v1/esim', '/api/v1/payments', '/api/v1/register', '/api/v1/kyc', '/api/v1/provision', '/api/v1/subscribe', '/api/v1/voice', '/api/v1/sms')
+
+
+class Handler(BaseHTTPRequestHandler):
+    def _headers(self, code: int, typ: str, size: int) -> None:
+        self.send_response(code)
+        self.send_header('Content-Type', typ)
+        self.send_header('Content-Length', str(size))
+        self.send_header('X-Content-Type-Options', 'nosniff')
+        self.send_header('X-Frame-Options', 'DENY')
+        self.send_header('Referrer-Policy', 'no-referrer')
+        self.send_header('Cache-Control', 'no-store')
+        self.send_header('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'")
+        self.end_headers()
+
+    def _json(self, code: int, data: dict | list) -> None:
+        body = json.dumps(data, separators=(',', ':')).encode('utf-8')
+        self._headers(code, 'application/json; charset=utf-8', len(body))
+        self.wfile.write(body)
+
+    def _blocked(self, path: str) -> bool:
+        return any(path == p or path.startswith(p + '/') for p in BLOCKED_PREFIXES)
+
+    def do_GET(self) -> None:  # noqa: N802
+        path = urlsplit(self.path).path
+        if self._blocked(path):
+            return self._json(HTTPStatus.FORBIDDEN, {'error':'NOT_AVAILABLE','message':'NAYVELO is a simulation. Live telecom services and payments are disabled.'})
+        if path == '/api/v1/health':
+            return self._json(HTTPStatus.OK, {'service':'nayvelo-simulator','mode':'SIMULATION_ONLY','liveActivationEnabled':False,'paymentsEnabled':False})
+        if path == '/api/v1/plans':
+            return self._json(HTTPStatus.OK, {'plans':get_plans(), 'disclaimer':'Concept plans; no prices or real service available.'})
+        if path == '/api/v1/esim-readiness':
+            return self._json(HTTPStatus.OK, {'compatibilityVerified':False,'guidance':['Look for Add eSIM or Add mobile plan in your phone settings','Confirm device unlock and eSIM eligibility with your phone maker and future licensed carrier','No device or subscriber ID is collected by this demo']})
+        item = STATIC_FILES.get(path)
+        if item:
+            filename, typ = item
+            body = (WEB / filename).read_bytes()
+            self._headers(HTTPStatus.OK, typ, len(body))
+            return self.wfile.write(body)
+        return self._json(HTTPStatus.NOT_FOUND, {'error':'NOT_FOUND'})
+
+    def do_POST(self) -> None:  # noqa: N802
+        return self._json(HTTPStatus.FORBIDDEN, {'error':'SIMULATION_ONLY','message':'This prototype cannot create subscribers, charge payments or activate network service.'})
+
+    def do_PUT(self) -> None:  # noqa: N802
+        return self.do_POST()
+
+    def do_PATCH(self) -> None:  # noqa: N802
+        return self.do_POST()
+
+    def do_DELETE(self) -> None:  # noqa: N802
+        return self.do_POST()
+
+    def log_message(self, format: str, *args) -> None:
+        # Avoid logging untrusted paths/query strings containing accidental sensitive data.
+        pass
+
+
+def main() -> None:
+    print('NAYVELO prototype at http://127.0.0.1:8765 — SIMULATION_ONLY; do not expose publicly')
+    server = ThreadingHTTPServer(('127.0.0.1', 8765), Handler)
+    server.serve_forever()
+
+if __name__ == '__main__':
+    main()

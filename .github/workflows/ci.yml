@@ -1,0 +1,50 @@
+name: NAYVELO CI Safety Gate
+on:
+  push:
+    branches: [main, develop, 'feature/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nayvelo-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  python-security-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Python setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run fail-closed contract tests
+        run: python3 scripts/validate.py
+      - name: Verify agent task selection without running AI
+        run: python3 scripts/agent_build.py
+  flutter-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install stable Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Generate standard Android/iOS wrappers
+        working-directory: apps/customer_app
+        run: flutter create --platforms=android,ios --project-name=nayvelo_customer --org=com.nayvelo .
+      - name: Flutter analyze
+        working-directory: apps/customer_app
+        run: flutter analyze
+      - name: Flutter widget tests
+        working-directory: apps/customer_app
+        run: flutter test
