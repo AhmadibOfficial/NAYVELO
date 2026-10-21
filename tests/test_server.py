@@ -58,10 +58,22 @@ class APIContractTests(unittest.TestCase):
                     self.assertEqual(data['error'], 'SIMULATION_ONLY')
 
     def test_sensitive_routes_not_available_even_on_get(self):
-        for path in ('/api/v1/activate','/api/v1/esim/issue','/api/v1/kyc','/api/v1/payments','/api/v1/provision','/api/v1/subscribe','/api/v1/register','/api/v1/sms/send'):
+        for path in ('/api/v1/activate','/api/v1/esim/issue','/api/v1/kyc','/api/v1/payments','/api/v1/provision','/api/v1/subscribe','/api/v1/register','/api/v1/sms/send','/api/v1/subscribers','/api/v1/register/complete?live=true','/api/v1/provision/activate'):
             with self.subTest(path=path):
                 status, _ = self.request(path)
                 self.assertEqual(status, 403)
+
+    def test_onboarding_cannot_register_or_activate(self):
+        for path in ('/api/v1/register', '/api/v1/subscribers', '/api/v1/onboarding',
+                     '/api/v1/activate', '/api/v1/provision', '/api/v1/esim/issue'):
+            for method in ('POST', 'PUT', 'PATCH', 'DELETE'):
+                with self.subTest(path=path, method=method):
+                    status, data = self.request(path + '?simulation=false', method)
+                    self.assertEqual(status, 403)
+                    self.assertEqual(data['error'], 'SIMULATION_ONLY')
+        with urlopen(self.base + '/onboarding.js', timeout=3) as response:
+            self.assertEqual(response.status, 200)
+            self.assertIn("form-action 'none'", response.headers['Content-Security-Policy'])
 
     def test_readiness_is_not_verification(self):
         status, data = self.request('/api/v1/esim-readiness')
