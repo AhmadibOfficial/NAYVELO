@@ -10,17 +10,19 @@
   <link rel="stylesheet" href="/plan_compare.css">
   <link rel="stylesheet" href="/esim_wizard.css">
   <link rel="stylesheet" href="/account_lab.css">
+  <link rel="stylesheet" href="/billing_sandbox.css">
   <script src="/app.js" defer></script>
   <script src="/plan_compare.js" defer></script>
   <script src="/esim_wizard.js" defer></script>
   <script src="/account_lab.js" defer></script>
+  <script src="/billing_sandbox.js" defer></script>
   <script src="/onboarding.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
   <header class="nav wrap">
     <a class="brand" href="#top" aria-label="NAYVELO home"><span class="brand-icon" aria-hidden="true">◈</span><span>NAYVELO</span></a>
-    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#account-lab">Account lab</a><a href="#onboarding">Try simulation</a></nav>
+    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#account-lab">Account lab</a><a href="#billing-lab">Usage lab</a><a href="#onboarding">Try simulation</a></nav>
     <a class="nav-cta" href="#plans">Explore plans <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
@@ -116,6 +118,39 @@
           <p class="lab-caption">These checkboxes only demonstrate future settings. They are not real consent or subscription controls.</p>
           <button type="button" data-lab-reset>Reset fictional profile</button>
           <p data-lab-status role="status" aria-live="polite" aria-atomic="true">Local demonstration only.</p>
+        </div>
+      </div>
+    </section>
+    <section id="billing-lab" class="billing-section" aria-labelledby="billing-heading">
+      <div class="wrap billing-grid">
+        <div>
+          <span class="kicker">05 / NAY-006 · SIMULATED USAGE</span>
+          <h2 id="billing-heading">Understand your usage. Explore a possible budget.</h2>
+          <p class="billing-note"><strong>Fictional demonstration only.</strong> These figures are invented examples, not your phone's data, NAYVELO pricing, network measurements, invoices, charges, or offers.</p>
+          <p class="billing-note">Choose an example rate and spending budget to explore arithmetic. This is not a checkout or subscription. No account, device identifier, payment details or real usage is requested or saved.</p>
+          <p class="billing-note">Calculation: 1 GiB = 1024 MiB. Seven-day average projected over 30 days, multiplied by the hypothetical rate, rounded to kobo. Taxes and fees are excluded.</p>
+        </div>
+        <div class="billing-panel" role="region" aria-label="Fictional data and spending simulator">
+          <div class="billing-controls">
+            <label for="billing-rate">Example rate (not a commercial tariff)
+              <select id="billing-rate" data-billing-rate disabled>
+                <option value="1250">₦1,250 per GiB</option><option value="2000">₦2,000 per GiB</option>
+                <option value="3000">₦3,000 per GiB</option><option value="5000">₦5,000 per GiB</option>
+              </select>
+            </label>
+            <label for="billing-cap">Hypothetical 30-day budget
+              <select id="billing-cap" data-billing-cap disabled>
+                <option value="3000">₦3,000</option><option value="5000" selected>₦5,000</option>
+                <option value="10000">₦10,000</option><option value="20000">₦20,000</option>
+              </select>
+            </label>
+          </div>
+          <div class="billing-metrics" data-billing-results aria-label="Illustrative metrics"></div>
+          <h3>Seven fictional daily readings</h3>
+          <div data-billing-bars aria-label="Fictional daily usage bar chart"></div>
+          <div class="billing-table" data-billing-history aria-label="Fictional history"></div>
+          <p class="billing-alert" data-billing-status role="status" aria-live="polite" aria-atomic="true">Loading fictional usage fixture only.</p>
+          <button type="button" class="billing-reset" data-billing-reset disabled>Reset example assumptions</button>
         </div>
       </div>
     </section>

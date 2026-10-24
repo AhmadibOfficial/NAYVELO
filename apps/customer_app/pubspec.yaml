@@ -14,3 +14,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/plans.json
+    - assets/synthetic_billing.json

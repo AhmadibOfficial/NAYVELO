@@ -1,10 +1,10 @@
-# NAY-006 — Mock billing and usage measurement sandbox
+# NAY-007 — Administrative dashboard demonstration
 
 Status: planned
 
 Acceptance criteria:
-- Implement entirely synthetic usage fixtures and projections
-- No payment capture or real carrier usage integration
-- Negative tests for forbidden transaction routes
+- Add synthetic plan and service analytics
+- Role boundaries and safe admin mock interactions
+- No access to production provisioning or credentials
 
 Read AGENTS.md and engineering/RELEASE_GATES.md. Maintain SIMULATION_ONLY.

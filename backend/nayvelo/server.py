@@ -8,10 +8,13 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from .catalog import get_plans
+from .billing_sandbox import get_fixture
 
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / 'web'
 STATIC_FILES = {
+    '/billing_sandbox.js': ('billing_sandbox.js', 'application/javascript; charset=utf-8'),
+    '/billing_sandbox.css': ('billing_sandbox.css', 'text/css; charset=utf-8'),
     '/account_lab.js': ('account_lab.js', 'application/javascript; charset=utf-8'),
     '/account_lab.css': ('account_lab.css', 'text/css; charset=utf-8'),
     '/esim_wizard.js': ('esim_wizard.js', 'application/javascript; charset=utf-8'),
@@ -25,7 +28,7 @@ STATIC_FILES = {
     '/app.js': ('app.js', 'application/javascript; charset=utf-8'),
 }
 SIMULATION_ONLY = True
-BLOCKED_PREFIXES = ('/api/v1/subscribers', '/api/v1/activate', '/api/v1/esim', '/api/v1/payments', '/api/v1/register', '/api/v1/kyc', '/api/v1/provision', '/api/v1/subscribe', '/api/v1/voice', '/api/v1/sms', '/api/v1/accounts', '/api/v1/subscribers', '/api/v1/login', '/api/v1/sessions', '/api/v1/recovery', '/api/v1/sim-swap', '/api/v1/otp', '/api/v1/reset-password')
+BLOCKED_PREFIXES = ('/api/v1/subscribers', '/api/v1/activate', '/api/v1/esim', '/api/v1/payments', '/api/v1/register', '/api/v1/kyc', '/api/v1/provision', '/api/v1/subscribe', '/api/v1/voice', '/api/v1/sms', '/api/v1/accounts', '/api/v1/subscribers', '/api/v1/login', '/api/v1/sessions', '/api/v1/recovery', '/api/v1/sim-swap', '/api/v1/otp', '/api/v1/reset-password', '/api/v1/billing', '/api/v1/usage', '/api/v1/transactions', '/api/v1/invoices', '/api/v1/checkout', '/api/v1/wallet', '/api/v1/topup', '/api/v1/recharge', '/api/v1/renew')
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -52,6 +55,8 @@ class Handler(BaseHTTPRequestHandler):
         path = urlsplit(self.path).path
         if self._blocked(path):
             return self._json(HTTPStatus.FORBIDDEN, {'error':'NOT_AVAILABLE','message':'NAYVELO is a simulation. Live telecom services and payments are disabled.'})
+        if path == '/api/v1/demo-usage':
+            return self._json(HTTPStatus.OK, get_fixture())
         if path == '/api/v1/health':
             return self._json(HTTPStatus.OK, {'service':'nayvelo-simulator','mode':'SIMULATION_ONLY','liveActivationEnabled':False,'paymentsEnabled':False})
         if path == '/api/v1/plans':

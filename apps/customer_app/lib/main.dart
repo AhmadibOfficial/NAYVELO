@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'plan_catalog_view.dart';
 import 'esim_readiness_wizard.dart';
 import 'account_lab.dart';
+import 'billing_sandbox.dart';
 
 void main() => runApp(const NayveloApp());
 
@@ -31,7 +32,7 @@ class NayveloHome extends StatefulWidget {
 class _NayveloHomeState extends State<NayveloHome> {
   int tab = 0;
   static const navy = Color(0xFF071D45);
-  static const titles = ['Experience', 'Plans', 'eSIM', 'Account lab'];
+  static const titles = ['Experience', 'Plans', 'eSIM', 'Account lab', 'Usage lab'];
 
   @override
   Widget build(BuildContext context) {
@@ -66,8 +67,10 @@ class _NayveloHomeState extends State<NayveloHome> {
               const Text('NAYVELO cannot issue an eSIM, verify a device or activate service at this stage.'),
               const SizedBox(height: 16),
               const EsimReadinessWizard(),
-            ] else ...[
+            ] else if (tab == 3) ...[
               const AccountLab(),
+            ] else ...[
+              const BillingSandbox(),
             ],
           ],
         ),
@@ -80,6 +83,7 @@ class _NayveloHomeState extends State<NayveloHome> {
           NavigationDestination(icon: Icon(Icons.layers_outlined), label: 'Plans'),
           NavigationDestination(icon: Icon(Icons.sim_card_outlined), label: 'eSIM'),
           NavigationDestination(icon: Icon(Icons.manage_accounts_outlined), label: 'Account'),
+          NavigationDestination(icon: Icon(Icons.bar_chart_outlined), label: 'Usage'),
         ],
       ),
     );
