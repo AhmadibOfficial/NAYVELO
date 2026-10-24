@@ -1,0 +1,20 @@
+/* NAY-004 additions: inherits NAYVELO primary palette; readable, keyboard friendly. */
+#esim-wizard {grid-column:1/-1;background:#f7faff;border:1px solid #cbdcf3;border-radius:22px;padding:clamp(18px,4vw,34px);margin-top:12px;min-width:0;}
+#esim-wizard h3 {font-size:clamp(22px,3vw,32px);line-height:1.2;margin:5px 0 12px;color:#071d45}
+#esim-wizard p {max-width:72ch;}
+#esim-wizard fieldset {border:0;margin:0;padding:0;min-width:0;}
+#esim-wizard legend {font-size:clamp(18px,2.7vw,24px);font-weight:800;color:#071d45;margin-bottom:14px;}
+#esim-wizard [data-wizard-progress] {font-size:14px;color:#385583;font-weight:700;}
+#esim-wizard .wizard-choice {display:flex;gap:12px;align-items:center;background:white;border:1px solid #b6cae7;padding:12px 14px;border-radius:12px;margin:9px 0;cursor:pointer;font-weight:550;}
+#esim-wizard .wizard-choice:focus-within {outline:3px solid #1769ff;outline-offset:2px;}
+#esim-wizard .wizard-choice input {accent-color:#1769ff;min-width:20px;min-height:20px;}
+#esim-wizard .wizard-hint {background:white;border-left:4px solid #1769ff;border-radius:5px;padding:12px 14px;}
+#esim-wizard .wizard-actions {display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;}
+#esim-wizard .wizard-actions button {font:inherit;padding:10px 19px;border-radius:9px;border:1px solid #1755b0;background:white;color:#071d45;font-weight:700;cursor:pointer;}
+#esim-wizard .wizard-actions [data-wizard-next] {background:#1769ff;color:#fff;}
+#esim-wizard .wizard-actions button:disabled {opacity:.45;cursor:not-allowed;}
+#esim-wizard [hidden] {display:none !important;}
+#esim-wizard button:focus-visible {outline:3px solid #1769ff;outline-offset:3px;}
+#esim-wizard .wizard-disclaimer {font-weight:700;color:#173a75;}
+#esim-wizard [data-wizard-status] {color:#314e74;font-size:14px;}
+@media (prefers-reduced-motion: reduce) {#esim-wizard * {scroll-behavior:auto !important;transition:none !important;}}

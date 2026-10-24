@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'plan_catalog_view.dart';
+import 'esim_readiness_wizard.dart';
 
 void main() => runApp(const NayveloApp());
 
@@ -62,6 +63,8 @@ class _NayveloHomeState extends State<NayveloHome> {
               const Card(child: ListTile(leading: Icon(Icons.phonelink_setup), title: Text('Check your phone settings'), subtitle: Text('Look for Add eSIM or Add mobile plan. Device and licensed carrier verification is still required.'))),
               const SizedBox(height: 8),
               const Text('NAYVELO cannot issue an eSIM, verify a device or activate service at this stage.'),
+              const SizedBox(height: 16),
+              const EsimReadinessWizard(),
             ],
           ],
         ),

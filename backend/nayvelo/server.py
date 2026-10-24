@@ -12,6 +12,8 @@ from .catalog import get_plans
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / 'web'
 STATIC_FILES = {
+    '/esim_wizard.js': ('esim_wizard.js', 'application/javascript; charset=utf-8'),
+    '/esim_wizard.css': ('esim_wizard.css', 'text/css; charset=utf-8'),
     '/plan_compare.js': ('plan_compare.js', 'application/javascript; charset=utf-8'),
     '/plan_compare.css': ('plan_compare.css', 'text/css; charset=utf-8'),
     '/': ('index.html', 'text/html; charset=utf-8'),
