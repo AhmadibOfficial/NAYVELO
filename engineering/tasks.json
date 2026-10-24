@@ -35,7 +35,7 @@
   {
     "id": "NAY-004",
     "title": "eSIM readiness education",
-    "status": "planned",
+    "status": "done",
     "priority": 3,
     "acceptance": [
       "Add educational device eSIM readiness wizard without unsupported compatibility claims",

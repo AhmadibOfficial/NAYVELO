@@ -1,10 +1,10 @@
-# NAY-004 — eSIM readiness education
+# NAY-005 — Subscriber account simulation and privacy-first data model
 
 Status: planned
 
 Acceptance criteria:
-- Add educational device eSIM readiness wizard without unsupported compatibility claims
-- Accessible keyboard interaction and explanatory statuses
-- Never request device identifiers, NIN or real QR codes
+- Design a safe mock account state without real personal data
+- Add threat model for registration and account takeover risks
+- Maintain 403 responses for regulated endpoints
 
 Read AGENTS.md and engineering/RELEASE_GATES.md. Maintain SIMULATION_ONLY.

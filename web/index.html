@@ -8,8 +8,10 @@
   <title>NAYVELO | Mobile, made digital.</title>
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/plan_compare.css">
+  <link rel="stylesheet" href="/esim_wizard.css">
   <script src="/app.js" defer></script>
   <script src="/plan_compare.js" defer></script>
+  <script src="/esim_wizard.js" defer></script>
   <script src="/onboarding.js" defer></script>
 </head>
 <body>
@@ -66,7 +68,22 @@
         </div>
       </div>
     </section>
-    <section id="readiness" class="section wrap readiness-grid"><div><span class="kicker">03 / eSIM READINESS</span><h2>Is your phone ready for eSIM?</h2><p>eSIM allows supported phones to use a digital network profile. Availability depends on your device model, its software and the network operator.</p><p>Use these educational steps; we do not collect IMEI, EID, NIN, or account details.</p></div><div class="checkcard"><h3>Check your device settings</h3><label><input type="checkbox" class="step"> I can find “Add eSIM” or “Add mobile plan”.</label><label><input type="checkbox" class="step"> My device is unlocked or eligible for my intended network.</label><label><input type="checkbox" class="step"> I understand carrier confirmation is still required.</label><p id="readiness-result" role="status">Complete the checklist for educational guidance.</p><button type="button" id="reset-checks" class="reset">Reset checklist</button></div></section>
+    <section id="readiness" class="section wrap readiness-grid"><div><span class="kicker">03 / eSIM READINESS</span><h2>Is your phone ready for eSIM?</h2><p>eSIM allows supported phones to use a digital network profile. Availability depends on your device model, its software and the network operator.</p><p>Use these educational steps; we do not collect IMEI, EID, NIN, or account details.</p></div><div class="checkcard"><h3>Check your device settings</h3><label><input type="checkbox" class="step"> I can find “Add eSIM” or “Add mobile plan”.</label><label><input type="checkbox" class="step"> My device is unlocked or eligible for my intended network.</label><label><input type="checkbox" class="step"> I understand carrier confirmation is still required.</label><p id="readiness-result" role="status">Complete the checklist for educational guidance.</p><button type="button" id="reset-checks" class="reset">Reset checklist</button></div>
+      <div id="esim-wizard" role="region" aria-labelledby="wizard-title">
+        <span class="kicker">NAY-004 / EDUCATIONAL GUIDE</span>
+        <h3 id="wizard-title">Explore eSIM readiness, step by step.</h3>
+        <p>Private, self-reported guidance only. Nothing is scanned, saved, sent, verified or activated.</p>
+        <p data-wizard-progress aria-live="polite">Step 1 of 4</p>
+        <div data-wizard-panel></div>
+        <div class="wizard-actions">
+          <button type="button" data-wizard-back hidden>Back</button>
+          <button type="button" data-wizard-next disabled>Continue</button>
+          <button type="button" data-wizard-reset hidden>Start again</button>
+        </div>
+        <p role="status" aria-live="polite" aria-atomic="true" data-wizard-status></p>
+        <p class="wizard-disclaimer">No NIN, IMEI, EID, phone number, serial number or eSIM QR code is requested. Carrier and regional compatibility are NOT verified.</p>
+      </div>
+    </section>
   </main>
   <footer><div class="wrap foot"><div><strong>◈ NAYVELO</strong><p>Mobile, made digital.</p></div><p>Concept demonstration only. Not a licensed or active telecommunications service.<br>© NAYVELO project concept</p></div></footer>
 </body>
