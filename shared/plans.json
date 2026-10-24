@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "mode": "SIMULATION_ONLY",
+  "disclaimer": "These are proposed plan concepts. Data, voice and SMS allowances, prices, coverage, hotspot rules and commercial availability have not been confirmed. Nothing can be purchased or activated.",
+  "plans": [
+    {
+      "code": "daily-flex",
+      "title": "Daily Flex",
+      "period": "Daily",
+      "audience": "Occasional connectivity",
+      "description": "A concept for customers interested in short-term connectivity.",
+      "data_gb": null,
+      "voice_minutes": null,
+      "sms_count": null,
+      "price_ngn": null,
+      "hotspot": "Not confirmed",
+      "rollover": "Not confirmed",
+      "available_for_purchase": false
+    },
+    {
+      "code": "smart-weekly",
+      "title": "Smart Weekly",
+      "period": "Weekly",
+      "audience": "Flexible routines",
+      "description": "A concept for customers who prefer a weekly planning cycle.",
+      "data_gb": null,
+      "voice_minutes": null,
+      "sms_count": null,
+      "price_ngn": null,
+      "hotspot": "Not confirmed",
+      "rollover": "Not confirmed",
+      "available_for_purchase": false
+    },
+    {
+      "code": "monthly-plus",
+      "title": "Monthly Plus",
+      "period": "Monthly",
+      "audience": "Everyday connectivity",
+      "description": "A concept for ongoing personal mobile usage.",
+      "data_gb": null,
+      "voice_minutes": null,
+      "sms_count": null,
+      "price_ngn": null,
+      "hotspot": "Not confirmed",
+      "rollover": "Not confirmed",
+      "available_for_purchase": false
+    },
+    {
+      "code": "family-connect",
+      "title": "Family Connect",
+      "period": "Monthly",
+      "audience": "Families and shared households",
+      "description": "A concept for grouped household management, without a confirmed shared allowance.",
+      "data_gb": null,
+      "voice_minutes": null,
+      "sms_count": null,
+      "price_ngn": null,
+      "hotspot": "Not confirmed",
+      "rollover": "Not confirmed",
+      "available_for_purchase": false
+    },
+    {
+      "code": "business-pro",
+      "title": "Business Pro",
+      "period": "Monthly",
+      "audience": "Business teams",
+      "description": "A concept for future organization-managed connectivity.",
+      "data_gb": null,
+      "voice_minutes": null,
+      "sms_count": null,
+      "price_ngn": null,
+      "hotspot": "Not confirmed",
+      "rollover": "Not confirmed",
+      "available_for_purchase": false
+    },
+    {
+      "code": "global-roam",
+      "title": "Global Roam",
+      "period": "Trip-based",
+      "audience": "International travelers",
+      "description": "A roaming concept; partner countries, coverage and charges are not established.",
+      "data_gb": null,
+      "voice_minutes": null,
+      "sms_count": null,
+      "price_ngn": null,
+      "hotspot": "Not confirmed",
+      "rollover": "Not confirmed",
+      "available_for_purchase": false
+    }
+  ]
+}

@@ -24,7 +24,7 @@
   {
     "id": "NAY-003",
     "title": "Subscription catalog and honest plan explanations",
-    "status": "planned",
+    "status": "done",
     "priority": 2,
     "acceptance": [
       "Add plan comparison and filter UX in web and Flutter",

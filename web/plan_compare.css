@@ -1,0 +1,21 @@
+/* NAY-003 catalog: works with the existing NAYVELO theme; no external fonts. */
+.plan-toolbar{display:flex;gap:1rem;align-items:end;flex-wrap:wrap;margin:1.5rem 0}
+.plan-toolbar label{font-weight:700;display:grid;gap:.45rem}
+.plan-toolbar select,.plan-toolbar button{font:inherit;border-radius:.6rem;padding:.75rem 1rem;border:1px solid #a8b8cc;background:white;color:#071d45}
+.plan-toolbar button{background:#1769ff;border-color:#1769ff;color:#fff;cursor:pointer;font-weight:700}
+.plan-toolbar button:disabled{background:#c9d6e6;border-color:#c9d6e6;color:#37445e;cursor:not-allowed}
+.plan-toolbar select:focus-visible,.plan-toolbar button:focus-visible,.plan-select input:focus-visible{outline:3px solid #1769ff;outline-offset:3px}
+.plan-status{margin:.6rem 0 1.1rem;color:#173a65}
+.plan-facts{display:grid;grid-template-columns:1fr 1fr;gap:.3rem .6rem;margin:1.25rem 0}
+.plan-facts dt{font-size:.81rem;color:#496075}
+.plan-facts dd{margin:0;font-size:.9rem;color:#071d45;font-weight:700}
+.plan-audience{font-size:.85rem}
+.plan-select{display:flex;align-items:center;gap:.5rem;margin-top:1rem;font-size:.9rem;font-weight:700;cursor:pointer}
+.plan-select input{width:1.25rem;height:1.25rem;accent-color:#1769ff}
+.plan-compare-wrap{overflow-x:auto;margin-top:1.25rem;background:#fff;border-radius:1rem}
+.comparison-table{border-collapse:collapse;width:100%;min-width:550px;color:#071d45}
+.comparison-table caption{caption-side:top;text-align:left;padding:1rem;font-weight:700}
+.comparison-table th,.comparison-table td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid #d6e4f1;white-space:normal}
+.comparison-table thead{background:#eaf3ff}
+.comparison-table tbody th{font-weight:700;min-width:140px}
+@media(prefers-reduced-motion:reduce){.concept-plan{transition:none!important}}

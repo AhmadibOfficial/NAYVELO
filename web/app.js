@@ -22,4 +22,4 @@ function renderReadiness(){
 }
 checks.forEach(e=>e.addEventListener('change',renderReadiness));
 document.querySelector('#reset-checks').addEventListener('click',()=>{checks.forEach(e=>e.checked=false);renderReadiness()});
-renderReadiness();loadPlans();
+renderReadiness();
