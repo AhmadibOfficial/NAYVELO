@@ -46,7 +46,7 @@
   {
     "id": "NAY-005",
     "title": "Subscriber account simulation and privacy-first data model",
-    "status": "planned",
+    "status": "done",
     "priority": 4,
     "acceptance": [
       "Design a safe mock account state without real personal data",

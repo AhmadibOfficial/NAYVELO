@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'plan_catalog_view.dart';
 import 'esim_readiness_wizard.dart';
+import 'account_lab.dart';
 
 void main() => runApp(const NayveloApp());
 
@@ -30,7 +31,7 @@ class NayveloHome extends StatefulWidget {
 class _NayveloHomeState extends State<NayveloHome> {
   int tab = 0;
   static const navy = Color(0xFF071D45);
-  static const titles = ['Experience', 'Plans', 'eSIM'];
+  static const titles = ['Experience', 'Plans', 'eSIM', 'Account lab'];
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +58,7 @@ class _NayveloHomeState extends State<NayveloHome> {
               ]))),
             ] else if (tab == 1) ...[
               const PlanCatalogView(),
-            ] else ...[
+            ] else if (tab == 2) ...[
               const Text('eSIM is a digital network profile for supported phones.'),
               const SizedBox(height: 16),
               const Card(child: ListTile(leading: Icon(Icons.phonelink_setup), title: Text('Check your phone settings'), subtitle: Text('Look for Add eSIM or Add mobile plan. Device and licensed carrier verification is still required.'))),
@@ -65,6 +66,8 @@ class _NayveloHomeState extends State<NayveloHome> {
               const Text('NAYVELO cannot issue an eSIM, verify a device or activate service at this stage.'),
               const SizedBox(height: 16),
               const EsimReadinessWizard(),
+            ] else ...[
+              const AccountLab(),
             ],
           ],
         ),
@@ -76,6 +79,7 @@ class _NayveloHomeState extends State<NayveloHome> {
           NavigationDestination(icon: Icon(Icons.home_outlined), label: 'Home'),
           NavigationDestination(icon: Icon(Icons.layers_outlined), label: 'Plans'),
           NavigationDestination(icon: Icon(Icons.sim_card_outlined), label: 'eSIM'),
+          NavigationDestination(icon: Icon(Icons.manage_accounts_outlined), label: 'Account'),
         ],
       ),
     );

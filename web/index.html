@@ -9,16 +9,18 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/plan_compare.css">
   <link rel="stylesheet" href="/esim_wizard.css">
+  <link rel="stylesheet" href="/account_lab.css">
   <script src="/app.js" defer></script>
   <script src="/plan_compare.js" defer></script>
   <script src="/esim_wizard.js" defer></script>
+  <script src="/account_lab.js" defer></script>
   <script src="/onboarding.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
   <header class="nav wrap">
     <a class="brand" href="#top" aria-label="NAYVELO home"><span class="brand-icon" aria-hidden="true">◈</span><span>NAYVELO</span></a>
-    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#onboarding">Try simulation</a></nav>
+    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#account-lab">Account lab</a><a href="#onboarding">Try simulation</a></nav>
     <a class="nav-cta" href="#plans">Explore plans <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
@@ -82,6 +84,39 @@
         </div>
         <p role="status" aria-live="polite" aria-atomic="true" data-wizard-status></p>
         <p class="wizard-disclaimer">No NIN, IMEI, EID, phone number, serial number or eSIM QR code is requested. Carrier and regional compatibility are NOT verified.</p>
+      </div>
+    </section>
+    <section id="account-lab" class="account-lab" aria-labelledby="account-lab-heading">
+      <div class="wrap lab-layout">
+        <div>
+          <span class="kicker">04 / NAY-005 · ACCOUNT PRIVACY</span>
+          <h2 id="account-lab-heading">Explore your future account. Without giving us your identity.</h2>
+          <p>Try a fictional account lifecycle and optional privacy controls. Nothing represents a real subscriber, phone number, authentication, eSIM or network service.</p>
+          <p class="lab-info">This is an offline-only, memory-only demonstration. No details are collected, stored, tracked or transmitted.</p>
+          <p>Account recovery, SIM swapping, purchases and carrier activation are not available. Locked and closed are terminal states in this demonstration; resetting simply creates a new fictional example.</p>
+        </div>
+        <div class="lab-panel" role="region" aria-label="Fictional subscriber account controls">
+          <label for="demo-alias" class="lab-subheading">Choose a fictional profile</label>
+          <select id="demo-alias" data-lab-alias>
+            <option value="DEMO-ALPHA">Fictional example A</option>
+            <option value="DEMO-BETA">Fictional example B</option>
+          </select>
+          <p data-lab-state aria-live="polite">Fictional DEMO-ALPHA: PREVIEW</p>
+          <p class="lab-subheading">Explore local state changes</p>
+          <div class="lab-actions" role="group" aria-label="Example account state transitions">
+            <button type="button" data-lab-transition="preview">Return to preview</button>
+            <button type="button" data-lab-transition="paused">Pause example</button>
+            <button type="button" data-lab-transition="locked">Lock example</button>
+            <button type="button" data-lab-transition="closed">Close example</button>
+          </div>
+          <p data-lab-events>No simulated transitions yet.</p>
+          <p class="lab-subheading">Optional preferences (off by default)</p>
+          <label class="lab-toggle"><input type="checkbox" data-lab-preference="productAnalytics"> Product analytics preview (no actual analytics)</label>
+          <label class="lab-toggle"><input type="checkbox" data-lab-preference="productNews"> Product updates preview (no messages sent)</label>
+          <p class="lab-caption">These checkboxes only demonstrate future settings. They are not real consent or subscription controls.</p>
+          <button type="button" data-lab-reset>Reset fictional profile</button>
+          <p data-lab-status role="status" aria-live="polite" aria-atomic="true">Local demonstration only.</p>
+        </div>
       </div>
     </section>
   </main>

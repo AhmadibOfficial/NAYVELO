@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "kind": "NAYVELO_SIMULATED_ACCOUNT_POLICY",
+  "simulationOnly": true,
+  "persistence": "memory_only",
+  "authentication": "none",
+  "personalDataCollected": false,
+  "optionalPrivacyDefaults": {
+    "productAnalytics": false,
+    "productNews": false
+  },
+  "allowedStates": ["preview", "paused", "locked", "closed"],
+  "allowedTransitions": {
+    "preview": ["paused", "locked", "closed"],
+    "paused": ["preview", "locked", "closed"],
+    "locked": [],
+    "closed": []
+  },
+  "profiles": [
+    {"alias": "DEMO-ALPHA", "initialState": "preview"},
+    {"alias": "DEMO-BETA", "initialState": "paused"}
+  ],
+  "disclaimer": "Fictional profiles, without real identities, credentials, SIM service or saved settings."
+}
