@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "mode": "SIMULATION_ONLY",
+  "source": "PUBLIC_FIXED_FICTIONAL_DATA",
+  "period": "Four invented example weeks; not current activity",
+  "plan_concepts": 6,
+  "weeks": [
+    {"label": "Example week 1", "visits": 120, "onboarding_previews": 40, "help_requests": 10},
+    {"label": "Example week 2", "visits": 138, "onboarding_previews": 50, "help_requests": 12},
+    {"label": "Example week 3", "visits": 161, "onboarding_previews": 58, "help_requests": 11},
+    {"label": "Example week 4", "visits": 180, "onboarding_previews": 66, "help_requests": 15}
+  ],
+  "plan_interest": [
+    {"code": "daily-flex", "count": 24},
+    {"code": "smart-weekly", "count": 31},
+    {"code": "monthly-plus", "count": 43},
+    {"code": "family-connect", "count": 19},
+    {"code": "business-pro", "count": 12},
+    {"code": "global-roam", "count": 9}
+  ],
+  "demo_operations": [
+    {"code": "documentation", "label": "Readiness guide review", "state": "illustrative_only"},
+    {"code": "support", "label": "Simulated support queue", "state": "illustrative_only"},
+    {"code": "partnership", "label": "Carrier integration prerequisite", "state": "not_authorized"}
+  ],
+  "disclaimer": "Fictional administrative exercise only. No real subscribers, network usage, tickets, activation, revenue, customer events, credentials, or operational access. Role switching is a demonstration, NOT authentication or authorization."
+}

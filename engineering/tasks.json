@@ -68,7 +68,7 @@
   {
     "id": "NAY-007",
     "title": "Administrative dashboard demonstration",
-    "status": "planned",
+    "status": "done",
     "priority": 6,
     "acceptance": [
       "Add synthetic plan and service analytics",

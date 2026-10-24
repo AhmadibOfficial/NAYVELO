@@ -1,0 +1,20 @@
+/* NAY-007: fictional public demo of a private admin concept; no production access */
+.admin-lab{padding:72px 0;background:#f7faff;color:#071d45}
+.admin-grid{display:grid;grid-template-columns:minmax(220px,0.9fr) minmax(0,1.5fr);gap:28px;align-items:start}
+.admin-panel{background:#fff;border:1px solid #cfdcf0;border-radius:20px;box-shadow:0 14px 45px rgba(7,29,69,.07);padding:24px;min-width:0}
+.admin-warning{padding:13px 15px;border-left:4px solid #1769ff;background:#eaf3ff;border-radius:9px;line-height:1.55}
+.admin-panel label{display:block;font-weight:700;margin:16px 0 7px}
+.admin-panel select{width:100%;min-height:44px;border-radius:9px;border:1px solid #8191a9;background:#fff;color:#071d45;padding:8px 12px}
+.admin-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:20px 0}
+.admin-metric{padding:16px;background:#eaf3ff;border:1px solid #d2e3fc;border-radius:13px}
+.admin-metric strong{display:block;font-size:1.7rem;color:#0751b8}
+.admin-bars{display:grid;gap:10px;margin:15px 0 26px}
+.admin-row{display:grid;grid-template-columns:110px minmax(0,1fr) 54px;align-items:center;gap:10px;font-size:.88rem}
+.admin-track{height:13px;background:#e4eefd;border-radius:20px;overflow:hidden}
+.admin-fill{height:100%;background:linear-gradient(90deg,#1769ff,#55c8ff);border-radius:20px}
+.admin-panel h3{margin:22px 0 8px}
+.admin-label{font-size:.85rem;color:#355271}
+.admin-status{padding-top:16px;font-weight:700}
+.admin-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.admin-table td,.admin-table th{padding:9px;border-bottom:1px solid #e6ecf5;text-align:left}
+@media (max-width:780px){.admin-grid{grid-template-columns:1fr}.admin-lab{padding:40px 0}.admin-panel{padding:16px}.admin-row{grid-template-columns:95px minmax(0,1fr) 42px}}
