@@ -1,10 +1,10 @@
-# NAY-007 — Administrative dashboard demonstration
+# NAY-008 — Carrier adapter contract and certification readiness
 
 Status: planned
 
 Acceptance criteria:
-- Add synthetic plan and service analytics
-- Role boundaries and safe admin mock interactions
-- No access to production provisioning or credentials
+- Interface-only adapter definitions with mock implementation
+- Document licensing/partner prerequisites for production
+- Negative tests ensuring no outbound carrier API requests
 
 Read AGENTS.md and engineering/RELEASE_GATES.md. Maintain SIMULATION_ONLY.

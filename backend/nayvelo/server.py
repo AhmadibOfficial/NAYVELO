@@ -9,10 +9,13 @@ from urllib.parse import urlsplit
 
 from .catalog import get_plans
 from .billing_sandbox import get_fixture
+from .admin_intelligence import load_fixture as get_admin_demo
 
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / 'web'
 STATIC_FILES = {
+    '/admin_dashboard.js': ('admin_dashboard.js', 'application/javascript; charset=utf-8'),
+    '/admin_dashboard.css': ('admin_dashboard.css', 'text/css; charset=utf-8'),
     '/billing_sandbox.js': ('billing_sandbox.js', 'application/javascript; charset=utf-8'),
     '/billing_sandbox.css': ('billing_sandbox.css', 'text/css; charset=utf-8'),
     '/account_lab.js': ('account_lab.js', 'application/javascript; charset=utf-8'),
@@ -28,7 +31,7 @@ STATIC_FILES = {
     '/app.js': ('app.js', 'application/javascript; charset=utf-8'),
 }
 SIMULATION_ONLY = True
-BLOCKED_PREFIXES = ('/api/v1/subscribers', '/api/v1/activate', '/api/v1/esim', '/api/v1/payments', '/api/v1/register', '/api/v1/kyc', '/api/v1/provision', '/api/v1/subscribe', '/api/v1/voice', '/api/v1/sms', '/api/v1/accounts', '/api/v1/subscribers', '/api/v1/login', '/api/v1/sessions', '/api/v1/recovery', '/api/v1/sim-swap', '/api/v1/otp', '/api/v1/reset-password', '/api/v1/billing', '/api/v1/usage', '/api/v1/transactions', '/api/v1/invoices', '/api/v1/checkout', '/api/v1/wallet', '/api/v1/topup', '/api/v1/recharge', '/api/v1/renew')
+BLOCKED_PREFIXES = ('/api/v1/subscribers', '/api/v1/activate', '/api/v1/esim', '/api/v1/payments', '/api/v1/register', '/api/v1/kyc', '/api/v1/provision', '/api/v1/subscribe', '/api/v1/voice', '/api/v1/sms', '/api/v1/accounts', '/api/v1/subscribers', '/api/v1/login', '/api/v1/sessions', '/api/v1/recovery', '/api/v1/sim-swap', '/api/v1/otp', '/api/v1/reset-password', '/api/v1/billing', '/api/v1/usage', '/api/v1/transactions', '/api/v1/invoices', '/api/v1/checkout', '/api/v1/wallet', '/api/v1/topup', '/api/v1/recharge', '/api/v1/renew', '/api/v1/admin', '/api/v1/metrics', '/api/v1/audit', '/api/v1/exports', '/api/v1/subscriber-admin', '/api/v1/provisioning', '/api/v1/telemetry', '/api/v1/admin-sessions', '/api/v1/analytics-live')
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -55,6 +58,8 @@ class Handler(BaseHTTPRequestHandler):
         path = urlsplit(self.path).path
         if self._blocked(path):
             return self._json(HTTPStatus.FORBIDDEN, {'error':'NOT_AVAILABLE','message':'NAYVELO is a simulation. Live telecom services and payments are disabled.'})
+        if path == '/api/v1/demo-admin':
+            return self._json(HTTPStatus.OK, get_admin_demo())
         if path == '/api/v1/demo-usage':
             return self._json(HTTPStatus.OK, get_fixture())
         if path == '/api/v1/health':

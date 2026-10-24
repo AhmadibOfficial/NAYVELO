@@ -11,18 +11,20 @@
   <link rel="stylesheet" href="/esim_wizard.css">
   <link rel="stylesheet" href="/account_lab.css">
   <link rel="stylesheet" href="/billing_sandbox.css">
+  <link rel="stylesheet" href="/admin_dashboard.css">
   <script src="/app.js" defer></script>
   <script src="/plan_compare.js" defer></script>
   <script src="/esim_wizard.js" defer></script>
   <script src="/account_lab.js" defer></script>
   <script src="/billing_sandbox.js" defer></script>
+  <script src="/admin_dashboard.js" defer></script>
   <script src="/onboarding.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
   <header class="nav wrap">
     <a class="brand" href="#top" aria-label="NAYVELO home"><span class="brand-icon" aria-hidden="true">◈</span><span>NAYVELO</span></a>
-    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#account-lab">Account lab</a><a href="#billing-lab">Usage lab</a><a href="#onboarding">Try simulation</a></nav>
+    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#account-lab">Account lab</a><a href="#billing-lab">Usage lab</a><a href="#admin-lab">Admin demo</a><a href="#onboarding">Try simulation</a></nav>
     <a class="nav-cta" href="#plans">Explore plans <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
@@ -151,6 +153,30 @@
           <div class="billing-table" data-billing-history aria-label="Fictional history"></div>
           <p class="billing-alert" data-billing-status role="status" aria-live="polite" aria-atomic="true">Loading fictional usage fixture only.</p>
           <button type="button" class="billing-reset" data-billing-reset disabled>Reset example assumptions</button>
+        </div>
+      </div>
+    </section>
+    <section id="admin-lab" class="admin-lab" aria-labelledby="admin-title">
+      <div class="wrap admin-grid">
+        <div>
+          <span class="kicker">06 / NAY-007 · SYNTHETIC INTELLIGENCE</span>
+          <h2 id="admin-title">Management visibility, without real subscriber data.</h2>
+          <p>This is a design demonstration for a future isolated internal dashboard. The figures are invented examples, not live network activity, real customers, sales or service performance.</p>
+          <p class="admin-warning"><strong>Public fictional demonstration.</strong> Role switching is NOT a login, authentication, RBAC enforcement or access to an actual admin system. No customer or carrier records are available here.</p>
+          <p>There are no real tickets, activation tools, actions, exports, credentials, payment operations or provisioning controls.</p>
+        </div>
+        <div class="admin-panel" role="region" aria-label="Fictional administration and operations dashboard">
+          <label for="admin-role">Simulate a management view (no login or access rights)</label>
+          <select id="admin-role" data-admin-role disabled>
+            <option value="viewer">Viewer — overview only</option>
+            <option value="analyst">Analyst — fictional trends</option>
+            <option value="operator">Operator — inert operations preview</option>
+          </select>
+          <div class="admin-metrics" data-admin-metrics aria-label="Invented summary figures"></div>
+          <div data-admin-trends aria-label="Invented usage trends"></div>
+          <div data-admin-plans aria-label="Fictional plan concepts"></div>
+          <div data-admin-operations aria-label="Non-operational mock status items"></div>
+          <p class="admin-status" data-admin-status role="status" aria-live="polite" aria-atomic="true">Loading public synthetic management exercise.</p>
         </div>
       </div>
     </section>

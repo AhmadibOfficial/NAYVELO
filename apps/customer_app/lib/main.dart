@@ -3,6 +3,7 @@ import 'plan_catalog_view.dart';
 import 'esim_readiness_wizard.dart';
 import 'account_lab.dart';
 import 'billing_sandbox.dart';
+import 'admin_dashboard.dart';
 
 void main() => runApp(const NayveloApp());
 
@@ -32,7 +33,7 @@ class NayveloHome extends StatefulWidget {
 class _NayveloHomeState extends State<NayveloHome> {
   int tab = 0;
   static const navy = Color(0xFF071D45);
-  static const titles = ['Experience', 'Plans', 'eSIM', 'Account lab', 'Usage lab'];
+  static const titles = ['Experience', 'Plans', 'eSIM', 'Account lab', 'Usage lab', 'Admin demo'];
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +70,10 @@ class _NayveloHomeState extends State<NayveloHome> {
               const EsimReadinessWizard(),
             ] else if (tab == 3) ...[
               const AccountLab(),
-            ] else ...[
+            ] else if (tab == 4) ...[
               const BillingSandbox(),
+            ] else ...[
+              const AdminDashboardDemo(),
             ],
           ],
         ),
@@ -84,6 +87,7 @@ class _NayveloHomeState extends State<NayveloHome> {
           NavigationDestination(icon: Icon(Icons.sim_card_outlined), label: 'eSIM'),
           NavigationDestination(icon: Icon(Icons.manage_accounts_outlined), label: 'Account'),
           NavigationDestination(icon: Icon(Icons.bar_chart_outlined), label: 'Usage'),
+          NavigationDestination(icon: Icon(Icons.dashboard_outlined), label: 'Demo admin'),
         ],
       ),
     );
