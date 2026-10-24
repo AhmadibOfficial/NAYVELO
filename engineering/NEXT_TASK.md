@@ -1,10 +1,10 @@
-# NAY-003 — Subscription catalog and honest plan explanations
+# NAY-004 — eSIM readiness education
 
 Status: planned
 
 Acceptance criteria:
-- Add plan comparison and filter UX in web and Flutter
-- Mark every plan price unconfirmed and unavailable for purchase
-- Unit tests for plan validation and no-payment guarantee
+- Add educational device eSIM readiness wizard without unsupported compatibility claims
+- Accessible keyboard interaction and explanatory statuses
+- Never request device identifiers, NIN or real QR codes
 
 Read AGENTS.md and engineering/RELEASE_GATES.md. Maintain SIMULATION_ONLY.

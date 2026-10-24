@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'plan_catalog_view.dart';
 
 void main() => runApp(const NayveloApp());
 
@@ -29,7 +30,6 @@ class _NayveloHomeState extends State<NayveloHome> {
   int tab = 0;
   static const navy = Color(0xFF071D45);
   static const titles = ['Experience', 'Plans', 'eSIM'];
-  static const planNames = ['Daily Flex', 'Smart Weekly', 'Monthly Plus', 'Family Connect', 'Business Pro', 'Global Roam'];
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +55,7 @@ class _NayveloHomeState extends State<NayveloHome> {
                 Text('Explore plan concepts and eSIM-readiness guidance. Purchases and activation are not available.'),
               ]))),
             ] else if (tab == 1) ...[
-              const Text('Plan concepts. No confirmed pricing or network service is available.'),
-              const SizedBox(height: 18),
-              ...planNames.map((name) => Card(child: ListTile(title: Text(name), subtitle: const Text('Concept only · Not purchasable'), trailing: const Icon(Icons.info_outline)))),
+              const PlanCatalogView(),
             ] else ...[
               const Text('eSIM is a digital network profile for supported phones.'),
               const SizedBox(height: 16),
