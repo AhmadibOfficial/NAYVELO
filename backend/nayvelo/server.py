@@ -12,6 +12,8 @@ from .catalog import get_plans
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / 'web'
 STATIC_FILES = {
+    '/account_lab.js': ('account_lab.js', 'application/javascript; charset=utf-8'),
+    '/account_lab.css': ('account_lab.css', 'text/css; charset=utf-8'),
     '/esim_wizard.js': ('esim_wizard.js', 'application/javascript; charset=utf-8'),
     '/esim_wizard.css': ('esim_wizard.css', 'text/css; charset=utf-8'),
     '/plan_compare.js': ('plan_compare.js', 'application/javascript; charset=utf-8'),
@@ -23,7 +25,7 @@ STATIC_FILES = {
     '/app.js': ('app.js', 'application/javascript; charset=utf-8'),
 }
 SIMULATION_ONLY = True
-BLOCKED_PREFIXES = ('/api/v1/subscribers', '/api/v1/activate', '/api/v1/esim', '/api/v1/payments', '/api/v1/register', '/api/v1/kyc', '/api/v1/provision', '/api/v1/subscribe', '/api/v1/voice', '/api/v1/sms')
+BLOCKED_PREFIXES = ('/api/v1/subscribers', '/api/v1/activate', '/api/v1/esim', '/api/v1/payments', '/api/v1/register', '/api/v1/kyc', '/api/v1/provision', '/api/v1/subscribe', '/api/v1/voice', '/api/v1/sms', '/api/v1/accounts', '/api/v1/subscribers', '/api/v1/login', '/api/v1/sessions', '/api/v1/recovery', '/api/v1/sim-swap', '/api/v1/otp', '/api/v1/reset-password')
 
 
 class Handler(BaseHTTPRequestHandler):
