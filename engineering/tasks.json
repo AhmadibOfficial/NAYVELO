@@ -57,7 +57,7 @@
   {
     "id": "NAY-006",
     "title": "Mock billing and usage measurement sandbox",
-    "status": "planned",
+    "status": "done",
     "priority": 5,
     "acceptance": [
       "Implement entirely synthetic usage fixtures and projections",

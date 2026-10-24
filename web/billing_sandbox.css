@@ -1,0 +1,22 @@
+.billing-section{background:#eff6ff;padding:4rem 0}
+.billing-grid{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.3fr);gap:2rem;align-items:start}
+.billing-panel{background:#fff;border:1px solid #ccdef8;border-radius:22px;padding:1.4rem;box-shadow:0 12px 36px #071d4510;min-width:0}
+.billing-controls{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0}
+.billing-controls label{display:flex;flex:1;flex-direction:column;gap:.4rem;font-weight:650;color:#071d45;min-width:160px}
+.billing-controls select{background:white;border:1px solid #a7bddd;color:#071d45;border-radius:12px;padding:.7rem;font:inherit}
+.billing-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1.2rem 0}
+.billing-metric{padding:.9rem;border-radius:12px;background:#f0f6ff;color:#29456f;font-size:.85rem;min-width:0}
+.billing-metric strong{display:block;font-size:1.2rem;color:#071d45;word-wrap:break-word;margin-top:.35rem}
+.billing-bar-row{display:grid;grid-template-columns:2rem minmax(0,1fr) 5.5rem;align-items:center;gap:.6rem;margin:.45rem 0;font-size:.8rem;color:#385071}
+.billing-track{background:#e1ecfd;border-radius:40px;overflow:hidden;height:.75rem}
+.billing-fill{background:#1769ff;height:100%;border-radius:40px}
+.billing-table{overflow-x:auto;margin-top:1.2rem}
+.billing-table table{border-collapse:collapse;width:100%;min-width:380px;font-size:.88rem}
+.billing-table th,.billing-table td{padding:.6rem;text-align:left;border-bottom:1px solid #e1e8f3}
+.billing-table caption{font-size:.85rem;color:#385071;text-align:left;margin-bottom:.65rem}
+.billing-alert{font-size:.88rem;padding:.75rem;border-left:3px solid #1769ff;background:#f0f6ff;color:#071d45}
+.billing-note{color:#365475;line-height:1.65}
+.billing-reset{border:1px solid #1769ff;background:white;color:#1149b5;padding:.7rem 1rem;border-radius:12px;font:inherit;cursor:pointer}
+.billing-reset:focus-visible,.billing-controls select:focus-visible{outline:3px solid #1769ff;outline-offset:3px}
+@media(max-width:820px){.billing-grid{grid-template-columns:1fr}.billing-metrics{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.billing-metrics{grid-template-columns:1fr}}

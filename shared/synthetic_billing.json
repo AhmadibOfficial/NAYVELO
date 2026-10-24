@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "mode": "SIMULATION_ONLY",
+  "source": "FIXED_SYNTHETIC_FIXTURE",
+  "currency": "NGN",
+  "usage_unit": "MiB",
+  "forecast_days": 30,
+  "sample_allowance_mib": 8192,
+  "sample_rate_kobo_per_gib": 125000,
+  "days": [
+    {
+      "date": "2026-10-01",
+      "usage_mib": 384
+    },
+    {
+      "date": "2026-10-02",
+      "usage_mib": 672
+    },
+    {
+      "date": "2026-10-03",
+      "usage_mib": 512
+    },
+    {
+      "date": "2026-10-04",
+      "usage_mib": 896
+    },
+    {
+      "date": "2026-10-05",
+      "usage_mib": 256
+    },
+    {
+      "date": "2026-10-06",
+      "usage_mib": 704
+    },
+    {
+      "date": "2026-10-07",
+      "usage_mib": 512
+    }
+  ],
+  "illustrative_history": [
+    {
+      "period": "2026-07",
+      "usage_mib": 3172,
+      "estimate_kobo": 387207
+    },
+    {
+      "period": "2026-08",
+      "usage_mib": 4096,
+      "estimate_kobo": 500000
+    },
+    {
+      "period": "2026-09",
+      "usage_mib": 3488,
+      "estimate_kobo": 425781
+    }
+  ],
+  "disclaimer": "Fictional usage, historical examples, and adjustable cost assumptions only. These are not NAYVELO plans, invoices, tariffs, payments, service measurements, or financial advice. No data is stored or transmitted to carriers."
+}
