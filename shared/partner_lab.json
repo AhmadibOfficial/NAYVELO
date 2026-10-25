@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "mode": "SIMULATION_ONLY",
+  "source": "FIXED_SYNTHETIC_PARTNER_LAB",
+  "network_connected": false,
+  "activation_enabled": false,
+  "payments_enabled": false,
+  "real_subscribers_enabled": false,
+  "certification_status": "NOT_VERIFIED",
+  "disclaimer": "EDUCATIONAL OFFLINE CONTRACT LAB ONLY. All responses are fictional; no carrier, eSIM provisioning, payment, identity or external partner is connected or certified.",
+  "scenarios": [
+    {"code":"nominal_ack","label":"Valid fictional acknowledgment","fault":"NONE","expected":"ACCEPTED","explanation":"A strictly shaped read-only acknowledgment with the expected sequence and correlation tag."},
+    {"code":"timeout","label":"Response timeout","fault":"TIMEOUT","expected":"REJECTED_TIMEOUT","explanation":"Responses beyond the deterministic laboratory deadline are denied."},
+    {"code":"duplicate_response","label":"Duplicate delivery","fault":"DUPLICATE","expected":"REJECTED_DUPLICATE","explanation":"Repeated acknowledgments cannot be counted as separate events."},
+    {"code":"out_of_order","label":"Out-of-order sequence","fault":"OUT_OF_ORDER","expected":"REJECTED_SEQUENCE","explanation":"Unexpected event sequence numbers fail rather than being reordered."},
+    {"code":"mismatched_tag","label":"Correlation mismatch","fault":"MISMATCHED_TAG","expected":"REJECTED_CORRELATION","explanation":"A reply for another fictional request cannot be accepted."},
+    {"code":"schema_drift","label":"Unexpected response property","fault":"SCHEMA_DRIFT","expected":"REJECTED_SCHEMA","explanation":"Unexpected partner fields, including URL fields, are rejected."},
+    {"code":"partner_error","label":"Partner says unavailable","fault":"PARTNER_ERROR","expected":"REJECTED_PARTNER_ERROR","explanation":"Temporary failures cannot be presented as service readiness."},
+    {"code":"pii_injection","label":"Injected identity property","fault":"PII_INJECTION","expected":"REJECTED_SCHEMA","explanation":"Identity-bearing properties are rejected by an exact field allowlist."},
+    {"code":"empty_response","label":"Missing acknowledgment","fault":"EMPTY","expected":"REJECTED_NO_RESPONSE","explanation":"Absence of a reply never becomes a successful response."}
+  ]
+}

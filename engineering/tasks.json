@@ -86,5 +86,16 @@
       "Document licensing/partner prerequisites for production",
       "Negative tests ensuring no outbound carrier API requests"
     ]
+  },
+  {
+    "id": "NAY-009",
+    "title": "Carrier contract conformance and partner sandbox laboratory",
+    "status": "done",
+    "priority": 8,
+    "acceptance": [
+      "Build an isolated synthetic partner response replay lab with strict allowlists",
+      "Test timeouts, duplicates, sequencing, correlation, schema drift and PII rejection",
+      "Provide accessible web and offline Flutter displays with no live telecom operations"
+    ]
   }
 ]

@@ -1,10 +1,11 @@
-# NAY-009 — Carrier contract conformance and partner sandbox laboratory
+# NAY-010 — Partner security assurance and automated conformance evidence
 
 Status: planned
 
 Acceptance criteria:
-- Build an isolated synthetic partner response replay lab with strict allowlists
-- Test timeouts, duplicates, sequencing, correlation, schema drift and PII rejection
-- Provide accessible web and offline Flutter displays with no live telecom operations
+- Demonstrate synthetic HMAC verification, tamper rejection, timestamp windows and replay detection
+- Prove bounded offline failure recovery and fail-closed identity and operation allowlists
+- Generate deterministic un-attested evidence and accessible offline web/Flutter displays
+- Keep live carrier calls, key handling, payments and eSIM provisioning disabled
 
 Maintain SIMULATION_ONLY. Read AGENTS.md and engineering/RELEASE_GATES.md.
