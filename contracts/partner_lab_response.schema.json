@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NAYVELO NAY-009 fictional read-only partner reply — NOT an operator specification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["request_tag", "sequence", "operation", "result", "latency_ms", "simulation_only"],
+  "properties": {
+    "request_tag": {"const": "NAY-009-FIXTURE"},
+    "sequence": {"type": "integer", "const": 1},
+    "operation": {"const": "READINESS_ONLY"},
+    "result": {"const": "ACK"},
+    "latency_ms": {"type": "integer", "minimum": 0, "maximum": 500},
+    "simulation_only": {"const": true}
+  }
+}

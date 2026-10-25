@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/billing_sandbox.css">
   <link rel="stylesheet" href="/admin_dashboard.css">
   <link rel="stylesheet" href="/carrier_readiness.css">
+  <link rel="stylesheet" href="/partner_lab.css">
   <script src="/app.js" defer></script>
   <script src="/plan_compare.js" defer></script>
   <script src="/esim_wizard.js" defer></script>
@@ -20,13 +21,14 @@
   <script src="/billing_sandbox.js" defer></script>
   <script src="/admin_dashboard.js" defer></script>
   <script src="/carrier_readiness.js" defer></script>
+  <script src="/partner_lab.js" defer></script>
   <script src="/onboarding.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
   <header class="nav wrap">
     <a class="brand" href="#top" aria-label="NAYVELO home"><span class="brand-icon" aria-hidden="true">◈</span><span>NAYVELO</span></a>
-    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#account-lab">Account lab</a><a href="#billing-lab">Usage lab</a><a href="#admin-lab">Admin demo</a><a href="#carrier-readiness">Carrier design</a><a href="#onboarding">Try simulation</a></nav>
+    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#account-lab">Account lab</a><a href="#billing-lab">Usage lab</a><a href="#admin-lab">Admin demo</a><a href="#carrier-readiness">Carrier design</a><a href="#partner-lab">Partner lab</a><a href="#onboarding">Try simulation</a></nav>
     <a class="nav-cta" href="#plans">Explore plans <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
@@ -198,6 +200,25 @@
           <h3>Certification evidence — not verified</h3>
           <div data-carrier-gates aria-label="Pending external approvals"></div>
           <p data-carrier-status role="status" aria-live="polite" aria-atomic="true">Loading public design-only fixture.</p>
+        </div>
+      </div>
+    </section>
+    <section id="partner-lab" class="partner-lab" aria-labelledby="partner-lab-heading">
+      <div class="wrap partner-lab-grid">
+        <div>
+          <span class="kicker">08 / NAY-009 · FICTIONAL PARTNER TESTING</span>
+          <h2 id="partner-lab-heading">Test the contracts. Never touch a carrier.</h2>
+          <p class="partner-lab-intro">Explore nine entirely synthetic carrier-response scenarios and learn how safe validation responds to failures. No real requests, credentials, subscriptions, network usage or customer identities are involved.</p>
+          <div class="partner-lab-banner"><strong>SIMULATION_ONLY:</strong> A fictional response marked ACCEPTED means only that this offline educational example passed its validator. This is not interoperability testing, certification, regulator approval, or a live telecom service.</div>
+        </div>
+        <div class="partner-lab-panel" role="region" aria-label="Fictional partner response conformance demonstration">
+          <h3>Partner-response safety lab</h3>
+          <p>9 cases · 0 connections · 0 certified integrations</p>
+          <label for="partner-case">Choose a fictional test case</label>
+          <select id="partner-case" data-partner-select disabled><option>Loading local demonstration…</option></select>
+          <div class="partner-lab-result" data-partner-result aria-label="Synthetic validator outcome">Loading fictional report...</div>
+          <p data-partner-status role="status" aria-live="polite" aria-atomic="true">No carrier operation is possible.</p>
+          <p class="partner-lab-footnote">Read-only contract education. No retries, outbound connections or writes occur.</p>
         </div>
       </div>
     </section>

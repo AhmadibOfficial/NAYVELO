@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'partner_lab.dart';
 import 'package:flutter/services.dart';
 
 /// Offline readiness document. Never connects to a carrier, registers a SIM,
@@ -109,6 +110,13 @@ class _CarrierReadinessDemoState extends State<CarrierReadinessDemo> {
           for(final item in report.gates) ListTile(title:Text(item['label']!),
             subtitle:const Text('NOT VERIFIED')),
         ],
+        OutlinedButton.icon(
+          onPressed: () => Navigator.of(context).push(
+            MaterialPageRoute<void>(builder: (_) => const PartnerLabDemo()),
+          ),
+          icon: const Icon(Icons.rule_folder_outlined),
+          label: const Text('Explore fictional partner contract lab'),
+        ),
         const Text('Public design demonstration only. No carrier API requests are made.'),
       ]);
     },
