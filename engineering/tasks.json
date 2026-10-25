@@ -79,7 +79,7 @@
   {
     "id": "NAY-008",
     "title": "Carrier adapter contract and certification readiness",
-    "status": "planned",
+    "status": "done",
     "priority": 7,
     "acceptance": [
       "Interface-only adapter definitions with mock implementation",

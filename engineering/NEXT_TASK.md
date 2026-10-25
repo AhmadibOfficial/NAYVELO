@@ -1,10 +1,10 @@
-# NAY-008 — Carrier adapter contract and certification readiness
+# NAY-009 — Carrier contract conformance and partner sandbox laboratory
 
 Status: planned
 
 Acceptance criteria:
-- Interface-only adapter definitions with mock implementation
-- Document licensing/partner prerequisites for production
-- Negative tests ensuring no outbound carrier API requests
+- Build an isolated synthetic partner response replay lab with strict allowlists
+- Test timeouts, duplicates, sequencing, correlation, schema drift and PII rejection
+- Provide accessible web and offline Flutter displays with no live telecom operations
 
-Read AGENTS.md and engineering/RELEASE_GATES.md. Maintain SIMULATION_ONLY.
+Maintain SIMULATION_ONLY. Read AGENTS.md and engineering/RELEASE_GATES.md.

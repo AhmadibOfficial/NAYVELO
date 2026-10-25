@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nayvelo:carrier-interface-design:v1",
+  "title": "NAYVELO fictional command envelope — not a carrier API",
+  "description": "No endpoint, network address, identity, token or provisioning payload is defined. Future integration requires separately reviewed contracts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "mode", "action", "scenario"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "mode": {"const": "SIMULATION_ONLY"},
+    "action": {"enum": ["PROVISION_PROFILE", "CHANGE_SERVICE_STATE", "QUERY_NETWORK_USAGE", "ASSIGN_NUMBER", "REGISTER_SUBSCRIBER"]},
+    "scenario": {"const": "EXAMPLE_ONLY"}
+  }
+}

@@ -1,0 +1,7 @@
+[
+  {"schema_version":1,"mode":"SIMULATION_ONLY","action":"PROVISION_PROFILE","scenario":"EXAMPLE_ONLY"},
+  {"schema_version":1,"mode":"SIMULATION_ONLY","action":"CHANGE_SERVICE_STATE","scenario":"EXAMPLE_ONLY"},
+  {"schema_version":1,"mode":"SIMULATION_ONLY","action":"QUERY_NETWORK_USAGE","scenario":"EXAMPLE_ONLY"},
+  {"schema_version":1,"mode":"SIMULATION_ONLY","action":"ASSIGN_NUMBER","scenario":"EXAMPLE_ONLY"},
+  {"schema_version":1,"mode":"SIMULATION_ONLY","action":"REGISTER_SUBSCRIBER","scenario":"EXAMPLE_ONLY"}
+]
