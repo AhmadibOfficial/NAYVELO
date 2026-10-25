@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "mode": "SIMULATION_ONLY",
+  "source": "PUBLIC_FIXED_INTERFACE_DESIGN",
+  "integration_state": "NOT_AUTHORIZED",
+  "network_connected": false,
+  "esim_provisioning_enabled": false,
+  "real_subscribers_enabled": false,
+  "payments_enabled": false,
+  "description": "Architecture exercise only. Nothing is licensed, connected, certified or available for activation.",
+  "boundaries": [
+    {"code":"network_access","label":"Host-network interfaces","state":"BLOCKED","detail":"Commercial wholesale agreement and approved integration required"},
+    {"code":"esim_provisioning","label":"eSIM profile provisioning","state":"BLOCKED","detail":"Authorized consumer RSP and SM-DP+ arrangements required"},
+    {"code":"service_management","label":"Voice, SMS and service-state operations","state":"BLOCKED","detail":"Operator-approved lifecycle, numbering and lawful obligations required"},
+    {"code":"usage_reporting","label":"Network usage and billing feeds","state":"BLOCKED","detail":"Contracted event reconciliation and accounting controls required"},
+    {"code":"subscriber_registration","label":"Subscriber identity and registration","state":"BLOCKED","detail":"Approved registration, privacy and identity procedures required"}
+  ],
+  "certification_gates": [
+    {"code":"ncc_licensing","label":"NCC authorization / permitted operating model","status":"NOT_VERIFIED"},
+    {"code":"wholesale_contract","label":"Executed host-network commercial and technical contract","status":"NOT_VERIFIED"},
+    {"code":"rsp_partner","label":"Authorized eSIM provisioning and GSMA applicability review","status":"NOT_VERIFIED"},
+    {"code":"subscriber_compliance","label":"Subscriber registration and data-protection review","status":"NOT_VERIFIED"},
+    {"code":"security_assurance","label":"Threat modeling, independent testing and key management","status":"NOT_VERIFIED"},
+    {"code":"interoperability","label":"Partner test environment and interoperability evidence","status":"NOT_VERIFIED"},
+    {"code":"service_operations","label":"Support, incident, fraud and abuse handling","status":"NOT_VERIFIED"},
+    {"code":"commercial_assurance","label":"Tariffs, disclosures, dispute and usage reconciliation","status":"NOT_VERIFIED"}
+  ],
+  "disclaimer": "PUBLIC DESIGN DEMONSTRATION ONLY. This dashboard is not certification, regulator approval, a network connection, a subscriber account, live telemetry or a carrier-provisioning tool."
+}

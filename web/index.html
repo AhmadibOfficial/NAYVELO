@@ -12,19 +12,21 @@
   <link rel="stylesheet" href="/account_lab.css">
   <link rel="stylesheet" href="/billing_sandbox.css">
   <link rel="stylesheet" href="/admin_dashboard.css">
+  <link rel="stylesheet" href="/carrier_readiness.css">
   <script src="/app.js" defer></script>
   <script src="/plan_compare.js" defer></script>
   <script src="/esim_wizard.js" defer></script>
   <script src="/account_lab.js" defer></script>
   <script src="/billing_sandbox.js" defer></script>
   <script src="/admin_dashboard.js" defer></script>
+  <script src="/carrier_readiness.js" defer></script>
   <script src="/onboarding.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
   <header class="nav wrap">
     <a class="brand" href="#top" aria-label="NAYVELO home"><span class="brand-icon" aria-hidden="true">◈</span><span>NAYVELO</span></a>
-    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#account-lab">Account lab</a><a href="#billing-lab">Usage lab</a><a href="#admin-lab">Admin demo</a><a href="#onboarding">Try simulation</a></nav>
+    <nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#plans">Plans</a><a href="#readiness">eSIM readiness</a><a href="#account-lab">Account lab</a><a href="#billing-lab">Usage lab</a><a href="#admin-lab">Admin demo</a><a href="#carrier-readiness">Carrier design</a><a href="#onboarding">Try simulation</a></nav>
     <a class="nav-cta" href="#plans">Explore plans <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
@@ -177,6 +179,25 @@
           <div data-admin-plans aria-label="Fictional plan concepts"></div>
           <div data-admin-operations aria-label="Non-operational mock status items"></div>
           <p class="admin-status" data-admin-status role="status" aria-live="polite" aria-atomic="true">Loading public synthetic management exercise.</p>
+        </div>
+      </div>
+    </section>
+    <section id="carrier-readiness" class="carrier-readiness" aria-labelledby="carrier-heading">
+      <div class="wrap carrier-grid">
+        <div>
+          <span class="kicker">07 / NAY-008 · INTERFACE DESIGN ONLY</span>
+          <h2 id="carrier-heading">Engineering for partnerships. Without claiming a connection.</h2>
+          <p>Explore five future integration boundaries and eight third-party readiness gates. Every interface is blocked, and every external approval is not verified.</p>
+          <p class="carrier-callout"><strong>Design simulator only:</strong> Not a licensed carrier, eSIM issuer, network connector, subscriber database, certification dashboard or commercial offer. No device or identity information is collected.</p>
+          <p>Real integration requires an appropriate NCC operating model, an executed host-network agreement, an authorized consumer eSIM provisioning partner, tested security and regulatory compliance, and a separate human-approved release.</p>
+        </div>
+        <div class="carrier-panel" role="region" aria-label="Public fictional carrier architecture checklist">
+          <p class="carrier-summary" data-carrier-summary>Checking local design-only document...</p>
+          <h3>Network boundaries — always blocked</h3>
+          <div data-carrier-boundaries aria-label="Blocked carrier interfaces"></div>
+          <h3>Certification evidence — not verified</h3>
+          <div data-carrier-gates aria-label="Pending external approvals"></div>
+          <p data-carrier-status role="status" aria-live="polite" aria-atomic="true">Loading public design-only fixture.</p>
         </div>
       </div>
     </section>

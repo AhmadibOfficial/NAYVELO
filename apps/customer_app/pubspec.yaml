@@ -16,3 +16,4 @@ flutter:
     - assets/plans.json
     - assets/synthetic_billing.json
     - assets/synthetic_admin.json
+    - assets/carrier_readiness.json
